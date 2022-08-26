@@ -1,0 +1,29 @@
+<h2>Create New Property</h2>
+
+<%= form_with(model:@property,local:true) do |f|%>
+
+<div>
+  <%=f.label "name"%><br>
+  <%=f.text_field :name%>
+</div>
+
+<div>
+  <%=f.label "address"%><br>
+  <%=f.text_field :address%>
+</div>
+
+<div>
+  <%=f.label "latitude"%><br>
+  <%=f.text_field :latitude%>
+</div>
+
+<div>
+  <%=f.label "longitude"%><br>
+  <%=f.text_field :longitude%>
+</div>
+
+<div>
+  <%=f.submit%>
+</div>
+
+<%end%>

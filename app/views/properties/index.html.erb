@@ -1,0 +1,15 @@
+<h1>Properties</h1>
+
+<div>
+	<% @properties.each do |property|%>
+		<%= property.name %>
+		<%= property.address %>
+
+		<p>
+			<%= link_to "Show this Property",  property_path(property.id)%>
+		</p>
+	<%end%>
+	<br>
+	
+</div>
+

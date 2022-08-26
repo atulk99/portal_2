@@ -1,0 +1,29 @@
+<h2>Create Bookings</h2>
+
+<%= form_with(model:@booking,local:true) do |f|%>
+
+<div>
+  <%=f.label "start"%><br>
+  <%=f.date_field :start%>
+</div>
+
+<div>
+  <%=f.label "end"%><br>
+  <%=f.date_field :end%>
+</div>
+
+<div>
+  <%=f.label "price"%><br>
+  <%=f.number_field :price%>
+</div>
+
+<div>
+  <%=f.label "property"%><br>
+  <%=f.select :property_id,Property.all.pluck(:name, :id)%>
+</div>
+
+<div>
+  <%=f.submit%>
+</div>
+
+<%end%>

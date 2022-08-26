@@ -1,0 +1,8 @@
+<h1>Future Booking of <%=@current_user.name%></h1>
+<% @bookings.each do |booking|%>
+	<%if booking.end > DateTime.now %>
+		<%=booking.start%>
+		<%=booking.end%>
+		<%=booking.price%>
+	<%end%>
+<%end%>

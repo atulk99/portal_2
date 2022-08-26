@@ -1,0 +1,11 @@
+<h1>Bookings of <%=@property.name%></h1>
+<% @booking.each do |booking|%>
+
+	<%=booking.start%>
+	<%=booking.end%>
+	<%=booking.price%>
+
+	<%= link_to 'Show',booking_path(booking.id)%>
+	<br>
+<%end%>
+

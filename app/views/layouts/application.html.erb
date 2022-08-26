@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portal2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <!-- <p class="notice"><%#= notice %></p> -->
+    <!-- <p class="alert"><%#= alert %></p> -->
+  <% if user_signed_in? %>
+
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% if current_user.roles.first.field =="Customer" %>
+               <%= link_to "Create Booking", new_booking_path %>
+               <%= link_to "My Bookings", bookings_path %>
+          <%else%>
+                <%= link_to "Create Property", new_property_path %>
+                <%= link_to "My Properties", properties_path %>
+                <%#= link_to "My Bookings on Properties", bookings_property_path %>
+                
+          <%end%>
+  <%end%>
+
+
+    <%= yield %>
+  </body>
+</html>

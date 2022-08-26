@@ -1,0 +1,16 @@
+<div>
+	<%= @booking.start%>
+	<%= @booking.end%>
+	<%= @booking.price%>
+
+	<br>
+
+	<%=link_to "Edit",edit_booking_path(@booking.id)%>
+	<br>
+	<%= link_to "Delete",booking_path(@booking.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
+		<br>
+
+	
+		<%= link_to "Back to bookings", bookings_path %>
+
+</div>

@@ -1,0 +1,18 @@
+<h1>Bookings</h1>
+
+<div>
+	<% @bookings.each do |booking|%>
+		<%= booking.start %>
+		<%= booking.end %>
+		<%= booking.price %>
+
+		<p>
+			<%= link_to "Show this booking", booking_path(booking.id)%>
+		</p>
+	<%end%>
+	<%= link_to "Show Past Bookings", pastbookings_path%>
+	<br>
+	<%= link_to "Show Future Bookings", futurebookings_path%>
+
+</div>
+
