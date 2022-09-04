@@ -17,6 +17,9 @@
       <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= link_to 'Edit account' ,edit_user_registration_path %>
       <br>
+      
+      <%= link_to 'Show User',user_path(current_user.id)%>
+      
 
       
           <% if current_user.roles.first.field =="Customer" %>

@@ -11,6 +11,10 @@ gem "sprockets-rails"
 
 gem "pry"
 
+gem 'bootstrap'
+
+gem 'jquery-rails'
+
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
 

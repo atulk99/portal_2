@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'futurebookings', to: 'bookings#futurebookings'
   devise_for :users
 
+  resources :users, :only =>[:show]
   resources :bookings
   # resources :properties
   resources :properties do 
