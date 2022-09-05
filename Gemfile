@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 gem "sprockets-rails"
 
 gem "pry"
-
+# gem 'pg'
 gem 'bootstrap'
 
 gem 'jquery-rails'

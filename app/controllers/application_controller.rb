@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 		# binding.pry
 		# current_user.roles.destroy_all
 
-		role = Role.find_by(field: params[:user][:roles])
-		# binding.pry   	
-   	current_user.roles << role if role !=nil
+		# role = Role.find_by(field: params[:user][:roles])
+		# # binding.pry   	
+  #  	current_user.roles << role if role !=nil
 
    	# binding.pry
    	if current_user.roles.first.field == 'Customer'
@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :name, :account, :phone) } 
+      devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :name, :account, :phone, :role_ids) } 
     end
 end
