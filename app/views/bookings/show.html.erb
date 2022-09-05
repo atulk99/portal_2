@@ -1,16 +1,33 @@
 <div>
-	<%= @booking.start%>
-	<%= @booking.end%>
-	<%= @booking.price%>
+	 <table class="table">
+	 	<thead>
+  		 <tr>
+  		  	<th>Property Name</th>
+  		  	<th>Property Address</th>
+  		  	<th>Start Date</th>
+  		  	<th>End Date</th>
+  		  	<th>Price</th>
+  		  	<th colspan="2">Operations</th>
+  		  	
+  		 </tr>
+  		</thead>
+  		<tbody>
+  		 <tr>
+   		 	<td><%= @property.name %></td>
+			<td><%= @property.address %></td>
+			<td><%= @booking.start %></td>
+			<td><%= @booking.end %></td>
+			<td><%= @booking.price %></td>
+			<td><%=link_to "Edit",edit_booking_path(@booking.id)%></td>
+			<td><%= link_to "Delete",booking_path(@booking.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%></td>
+			
 
-	<br>
+  		 </tr>
+  		</tbody>
+	 </table>
 
-	<%=link_to "Edit",edit_booking_path(@booking.id)%>
-	<br>
-	<%= link_to "Delete",booking_path(@booking.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
-		<br>
-
-	
-		<%= link_to "Back to bookings", bookings_path %>
-
+	 <button type="button" class="btn btn-outline-primary">
+	 	<%= link_to "Back to bookings", bookings_path %>
+	 </button>
 </div>
+	

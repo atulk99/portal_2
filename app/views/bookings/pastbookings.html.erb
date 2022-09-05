@@ -1,8 +1,27 @@
 <h1>Past Booking of <%=@current_user.name%></h1>
-<% @bookings.each do |booking|%>
-	<%if booking.end <DateTime.now %>
-		<%=booking.start%>
-		<%=booking.end%>
-		<%=booking.price%>
-	<%end%>
-<%end%>
+
+<div>
+	
+	 <table class="table">
+	 	<thead>
+  		 <tr>
+  		  	<th>Starting Date</th>
+  		  	<th>Ending Date</th>
+  		  	<th>Price</th>
+  		 </tr>
+  		</thead>
+  		<tbody>
+  		 <% @bookings.each do |booking|%>
+  		 <%if booking.end < DateTime.now %>
+  		 <tr>
+   		 	<td><%=booking.start%></td>
+			<td><%=booking.end%></td>
+			<td><%=booking.price%></td>
+
+  		 </tr>
+  		 <%end%>
+  		 <%end%>
+  		</tbody>
+	 </table>
+		
+</div>

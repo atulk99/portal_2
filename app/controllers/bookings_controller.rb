@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
 	end
 
 	def show
-		
+		@property = @booking.property
 	end
 
 	def new
@@ -43,6 +43,7 @@ class BookingsController < ApplicationController
 		@booking.destroy
 		#redirect_to bookings_path
 	end
+
 
 	def pastbookings
 		@current_user=current_user

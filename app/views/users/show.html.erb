@@ -1,0 +1,14 @@
+<h2>Hi <%= current_user.name %>! </H2>
+	<hr>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= current_user.name %></dd>
+  <dt>Phone Number:</dt>
+  <dd><%= current_user.phone %></dd>
+  <dt>Account Number:</dt>
+  <dd><%= current_user.account %></dd>
+  <dt>Active Since:</dt>
+  <dd><%= current_user.created_at.strftime("%d-%m-%Y") %></dd>
+
+</dl>

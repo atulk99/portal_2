@@ -10,28 +10,44 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg_for_all_pages">
     <!-- <p class="notice"><%#= notice %></p> -->
     <!-- <p class="alert"><%#= alert %></p> -->
   <% if user_signed_in? %>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-      <%= link_to 'Edit account' ,edit_user_registration_path %>
-      <br>
-      
-      <%= link_to 'Show User',user_path(current_user.id)%>
-      
+     
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  
 
       
           <% if current_user.roles.first.field =="Customer" %>
                <%= link_to "Create Booking", new_booking_path %>
                <%= link_to "My Bookings", bookings_path %>
           <%else%>
-                <%= link_to "Create Property", new_property_path %>
-                <%= link_to "My Properties", properties_path %>
+                <%= link_to "Create Property", new_property_path%>
+                <%= link_to "My Properties", properties_path%>
                 <%#= link_to "My Bookings on Properties", bookings_property_path %>
                 
           <%end%>
+          <%= link_to 'Show User',user_path(current_user.id)%>
+          <%= link_to 'Edit account' ,edit_user_registration_path%>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+      </nav>
 
+      <p align="center">Hi <%= current_user.name%>, <%= current_user.email%>!<br>
+      Welcome to Portal _/\_
+      </p>
+      
+  <%else%>
+  <div align="center">
+    <h1>Hotel Booking Site</h1>
+    <button type="button" class="btn btn-outline-success">
+      <%=link_to "Sign In", new_user_session_path, class: "link_color_change"%>
+    </button>
+    <button type="button" class="btn btn-outline-success">
+      <%=link_to "Sign Up", new_user_registration_path, class: "link_color_change"%>
+    </button> 
+  </div>
+  
   <%end%>
 
 
