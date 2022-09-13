@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root "home#index"
   get 'pastbookings', to: 'bookings#pastbookings'
   get 'futurebookings', to: 'bookings#futurebookings'
+  
   devise_for :users
 
   resources :users, :only =>[:show]

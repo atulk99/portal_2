@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :bookings
   # after_create :assign_role_after_sign_up
 
+  validates :email, format: /\A\S+@.+\.\S+\z/
+  validates :name, presence: true
+
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

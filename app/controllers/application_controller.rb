@@ -4,14 +4,6 @@ class ApplicationController < ActionController::Base
 
 	def after_sign_in_path_for(resource)
 
-		# binding.pry
-		# current_user.roles.destroy_all
-
-		# role = Role.find_by(field: params[:user][:roles])
-		# # binding.pry   	
-  #  	current_user.roles << role if role !=nil
-
-   	# binding.pry
    	if current_user.roles.first.field == 'Customer'
         return bookings_path
     elsif current_user.roles.first.field == 'Property Owner'
